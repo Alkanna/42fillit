@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/23 19:51:50 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/23 21:03:19 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ WARN_STRING  = "[WARNING]"
 COM_STRING   = "Compiling"
 RUN_STRING	 = "Running"
 
-COLUMNS = $COLUMNS
+COLL = $(shell export COLUMNS)
+COL = $(shell echo $(COLUMNS))
 
 NAME = fillit
 
@@ -67,6 +68,11 @@ fclean: clean
 
 re: fclean all
 
-help:
-	@printf "%*s" $(COLUMNS) | tr " " "-"
+help: environnement
+	export COLUMNS
+	echo $COLUMNS
+	export COLUMNS && printf "%*s" "$$COLUMNS" | tr " " "-"
 	@printf "%-60b%b" "$(WARN_COLOR)Authors   $(NO_COLOR): $(OK_COLOR)klouer" "$(NO_COLOR)\n"
+
+environnement:
+	@export COLUMNS; echo $$COLUMNS
