@@ -6,9 +6,23 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/23 16:03:40 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/23 17:23:38 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+ifneq ($(words $(MAKECMDGOALS)),1) # if no argument was given to make...
+.DEFAULT_GOAL = all # set the default goal to all
+%:                   # define a last resort default rule
+	  @$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST)) # recursive make call,
+else
+ifndef ECHO
+T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
+	  -nrRf $(firstword $(MAKEFILE_LIST)) \
+	  ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
+N := x
+C = $(words $N)$(eval N := x $N)
+ECHO = echo -ne "\r [`expr $C '*' 100 / $T`%]"
+endif
 
 COM_COLOR   = \033[0;34m
 OBJ_COLOR   = \033[0;36m
@@ -46,6 +60,7 @@ $(NAME): $(OBJ)
 	@make -C $(LFT_PATH)
 	@gcc -o $(NAME) $(OBJ) -L $(LFT_PATH) -lft
 	@printf "%-60b%b" "$(COM_COLOR)$(COM_STRING)$(OBJ_COLOR) $(@F)" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n";
+	@printf "%-60b%b" "$(OK_COLOR)Compilation successful." "$(NO_COLOR)\n"
 	@printf "%-60b%b" "$(WARN_COLOR)Usage: ./fillit [mapfile] - Have fun !" "$(NO_COLOR)\n";
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
@@ -63,3 +78,5 @@ fclean: clean
 	@printf "%-60b%b" "$(COM_COLOR)$(RUN_STRING)$(OBJ_COLOR) $(@F)" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n";
 
 re: fclean all
+
+endif
