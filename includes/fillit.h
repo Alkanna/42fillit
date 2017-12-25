@@ -6,13 +6,14 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/25 06:06:00 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/25 10:39:31 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 # include "./libft/includes/libft.h"
+# include "./libft/includes/color.h"
 
 typedef struct			s_block
 {

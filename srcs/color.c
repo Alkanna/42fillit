@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/25 06:23:00 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/25 15:02:53 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_color_map2(t_res *res, int x, int y)
 void	ft_color_map1(t_res *res, int x, int y)
 {
 	if (!ft_strncmp(&res->map[y][x], "A", 1))
-		ft_putstr("\x1b[38;5;52mA\x1b[0m");
+		ft_putstrc(&res->map[y][x], WHITE, 1);//ft_putstr("\x1b[38;5;52mA\x1b[0m");
 	if (!ft_strncmp(&res->map[y][x], ".", 1))
 		ft_putstr("\x1b[38;5;22m.\x1b[0m");
 	if (!ft_strncmp(&res->map[y][x], "B", 1))
@@ -78,7 +78,35 @@ void	ft_color_map1(t_res *res, int x, int y)
 	if (!ft_strncmp(&res->map[y][x], "C", 1))
 		ft_putstr("\x1b[38;5;199mC\x1b[0m");
 	if (!ft_strncmp(&res->map[y][x], "D", 1))
-		ft_putstr("\x1b[38;5;91mC\x1b[0m");
+		ft_putstr("\x1b[38;5;91mD\x1b[0m");
+}
+
+void	ft_frame_horizontal(t_res *res, int c)
+{
+	int		i;
+
+	if (c)
+	{
+		i = 0;
+		ft_putstr("╔");
+		while (i < res->size)
+		{
+			ft_putstr("═");
+			i++;
+		}
+		ft_putstr("╗\n");
+	}
+	else if (!c)
+	{
+		i = 0;
+		ft_putstr("╚");
+		while (i < res->size)
+		{
+			ft_putstr("═");
+			i++;
+		}
+		ft_putstr("╝\n");
+	}
 }
 
 void	ft_color_map(t_res *res)
@@ -87,7 +115,7 @@ void	ft_color_map(t_res *res)
 	int		x;
 
 	y = 0;
-	ft_putstr("╔═════════╗\n");
+	ft_frame_horizontal(res, 1);
 	while (y < res->size)
 	{
 		x = 0;
@@ -102,5 +130,5 @@ void	ft_color_map(t_res *res)
 		ft_putstr("║");
 		ft_putchar('\n');
 	}
-	ft_putstr("╚═════════╝\n");
+	ft_frame_horizontal(res, 0);
 }

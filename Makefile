@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/25 06:07:14 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/25 15:15:40 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,8 @@ $(NAME): $(OBJ)
 	@make -C $(LFT_PATH)
 	@gcc -o $(NAME) $(OBJ) -L $(LFT_PATH) -lft
 	@printf "%-60b%b" "$(COM_COLOR)$(COM_STRING)$(OBJ_COLOR) $(@F)" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n";
-	@printf "%-60b%b" "$(OK_COLOR)Compilation successful." "$(NO_COLOR)\n"
-	@printf "%-60b%b" "$(WARN_COLOR)Usage: ./fillit [mapfile] - Have fun !" "$(NO_COLOR)\n";
+	@printf "%-60b%b" "$(OK_COLOR)\nCompilation successful." "$(NO_COLOR)\n\n"
+	@printf "%-60b%b" "$(WARN_COLOR)Usage: ./fillit (-c) [mapfile] (-c is what happens\nwhen you have too much time on your hands) - Have fun !" "$(NO_COLOR)\n";
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
@@ -107,9 +107,11 @@ endef
 Authors=klouer and dshults
 Version=1.01
 Function=Tries to fit tetriminos into the smallest possible map
-RunHelp = Run 'make help' to see usage
-$(info --------------------------------------------------------------------------------)
-$(info ${YELLOW}Authors${RESET} : ${GREEN}$(Authors)${RESET})
-$(info ${YELLOW}Version${RESET} : ${GREEN}$(Version)${RESET})
-$(info ${YELLOW}Function${RESET}: ${GREEN}$(Function)$(NEWLINE)$(TAB)$(TAB)$(RunHelp)${RESET})
-$(info --------------------------------------------------------------------------------)
+RunHelp = ------------------------- Run 'make help' to see usage ---------------------------
+Git =https://github.com/Alkanna/42fillit
+$(info ╔════════════════════════════════════════════════════════════════════════════════╗)
+$(info ------------------------- ${YELLOW}Authors${RESET} : ${GREEN}$(Authors)${RESET} ---------------------------)
+$(info ------------------------------- ${YELLOW}Version${RESET} : ${GREEN}$(Version)${RESET} -----------------------------------)
+$(info ----------------- ${YELLOW}GitHub${RESET} : ${GREEN}$(Git)${RESET} -------------------)
+$(info ------- ${YELLOW}Function${RESET} : ${GREEN}$(Function)${RESET} --------$(NEWLINE)$(RunHelp))
+$(info ╚════════════════════════════════════════════════════════════════════════════════╝$(NEWLINE))

@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/23 14:57:06 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/25 10:40:12 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,8 @@ SRC_NAME = ft_atoi.c \
 	ft_strsub.c \
 	ft_strtrim.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	ft_putstrc.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC_PATH = ./srcs/

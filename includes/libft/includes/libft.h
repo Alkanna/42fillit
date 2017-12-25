@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 18:34:42 by dshults           #+#    #+#             */
-/*   Updated: 2017/11/14 18:34:44 by dshults          ###   ########.fr       */
+/*   Updated: 2017/12/25 11:11:01 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,6 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+void				ft_putstrc(char *str, char *color, size_t len);
+
 #endif
