@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/22 14:44:58 by dshults          ###   ########.fr       */
+/*   Updated: 2017/12/25 06:06:00 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ int						ft_solve(t_res *map, int tetri);
 
 int						ft_is_putable(t_res *map, t_block *t);
 void					ft_put_tetris(t_res *res, t_block *t);
+
+void					ft_color_map(t_res *res);
+void					ft_color_map_2(t_res *res, int x, int y);
+void					ft_color_map_3(t_res *res, int x, int y);
 
 # define BUF_SIZE 4096
 

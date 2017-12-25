@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/24 11:25:39 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/25 06:07:14 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,11 @@ WARN_STRING  = "[WARNING]"
 COM_STRING   = "Compiling"
 RUN_STRING	 = "Running"
 
-COLL = $(shell export COLUMNS)
-COL = $(shell echo $(COLUMNS))
-
 NAME = fillit
 
 FLAGS = -Wall -Werror -Wextra
 
-SRC_NAME = main.c	put.c	get.c	solve.c	tris.c	check_input.c
+SRC_NAME = main.c	put.c	get.c	solve.c	tris.c	check_input.c color.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC_PATH = ./srcs/
@@ -71,14 +68,6 @@ fclean: clean
 
 ## Runs a full clean and compiles the whole project and its libs
 re: fclean all
-
-oldhelp:
-	@printf "%-60b%b" "$(WARN_COLOR)Authors   $(NO_COLOR): $(OK_COLOR)dshults & klouer" "$(NO_COLOR)\n\n"
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
-## Work in progress
-environnement:
-	@export COLUMNS; echo $$COLUMNS
 
 ## COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
