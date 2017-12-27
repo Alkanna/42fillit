@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/25 15:15:40 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/27 19:04:45 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ NAME = fillit
 
 FLAGS = -Wall -Werror -Wextra
 
-SRC_NAME = main.c	put.c	get.c	solve.c	tris.c	check_input.c color.c
+SRC_NAME = main.c	put.c	get.c	solve.c	tris.c	check_input.c color.c random.c ft_randomtab.c ft_gencolorcode.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC_PATH = ./srcs/

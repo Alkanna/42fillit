@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/25 10:39:31 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/27 20:54:17 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ void					ft_put_tetris(t_res *res, t_block *t);
 void					ft_color_map(t_res *res);
 void					ft_color_map_2(t_res *res, int x, int y);
 void					ft_color_map_3(t_res *res, int x, int y);
+unsigned int			ft_random(unsigned int startnumber, unsigned
+							int endnumber);
+int						*ft_randomtab(size_t size, int min, int max);
+char					*ft_gencolorcode(int colorcode, char *string);
 
 # define BUF_SIZE 4096
 

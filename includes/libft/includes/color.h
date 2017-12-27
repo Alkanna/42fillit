@@ -6,10 +6,13 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 10:35:20 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/25 11:14:51 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/27 17:47:04 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* COLOR SHEET https://jonasjacek.github.io/colors/ */
+
+/*
+** COLOR SHEET https://jonasjacek.github.io/colors/
+*/
 
 #ifndef COLOR_H
 # define COLOR_H
