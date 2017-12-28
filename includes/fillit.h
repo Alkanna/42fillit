@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/27 20:54:17 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/28 07:01:30 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ unsigned int			ft_random(unsigned int startnumber, unsigned
 							int endnumber);
 int						*ft_randomtab(size_t size, int min, int max);
 char					*ft_gencolorcode(int colorcode, char *string);
+void					ft_aleacolor(t_res *res, int x, int y);
+int						ft_checkargs(int argc, char *argv, char *arg);
+void					ft_aleasortedcolor(t_res *res, int x, int y, int *rt);
 
 # define BUF_SIZE 4096
 

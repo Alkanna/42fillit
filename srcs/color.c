@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/27 22:17:50 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/28 06:50:32 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,21 +79,7 @@ void	ft_color_map1(t_res *res, int x, int y)
 		ft_putstr("\x1b[38;5;199mC\x1b[0m");
 	if (!ft_strncmp(&res->map[y][x], "D", 1))
 		ft_putstr("\x1b[38;5;91mD\x1b[0m");
-}
-
-void	ft_aleacolor(t_res *res, int x, int y)
-{
-	int rand;
-	char *tk;
-
-	rand = ft_random(15, 240);
-	if (res->map[y][x] == '\n' && res->map[y][x + 1] != '\0')
-	{
-		ft_putchar('\n');
-		return ;
-	}
-	tk = ft_gencolorcode(rand, &res->map[y][x]);
-	ft_putstr(tk);
+	ft_color_map2(res, x, y);
 }
 
 void	ft_frame_horizontal(t_res *res, int c)
@@ -104,31 +90,32 @@ void	ft_frame_horizontal(t_res *res, int c)
 	{
 		i = 0;
 		ft_putstr("╔");
-		while (i < res->size)
-		{
+		while (i++ < res->size)
 			ft_putstr("═");
-			i++;
-		}
 		ft_putstr("╗\n");
 	}
 	else if (!c)
 	{
 		i = 0;
 		ft_putstr("╚");
-		while (i < res->size)
-		{
+		while (i++ < res->size)
 			ft_putstr("═");
-			i++;
-		}
 		ft_putstr("╝\n");
 	}
 }
+
+/*
+** ft_aleacolor(res, x, y)
+** ft_color_map1(res, x, y)
+*/
 
 void	ft_color_map(t_res *res)
 {
 	int		y;
 	int		x;
+	int		*rt;
 
+	rt = ft_randomtab(26, 15, 240);
 	y = 0;
 	ft_frame_horizontal(res, 1);
 	while (y < res->size)
@@ -137,9 +124,7 @@ void	ft_color_map(t_res *res)
 		ft_putstr("║");
 		while (x < res->size)
 		{
-			ft_aleacolor(res, x, y);
-			//  ft_color_map1(res, x, y);
-			//ft_color_map2(res, x, y);
+			ft_aleasortedcolor(res, x, y, rt);
 			x++;
 		}
 		y++;
@@ -147,4 +132,5 @@ void	ft_color_map(t_res *res)
 		ft_putchar('\n');
 	}
 	ft_frame_horizontal(res, 0);
+	free(rt);
 }

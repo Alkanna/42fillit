@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/22 14:43:16 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/25 06:04:31 by klouer           ###   ########.fr       */
+/*   Created: 2017/12/28 06:36:49 by klouer            #+#    #+#             */
+/*   Updated: 2017/12/28 06:56:03 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	ft_put_error(int err)
 {
 	if (err == 2)
 	{
-		ft_putstr("Usage: ./fillit (-c) [mapfile]\n");
+		ft_putstr("Usage: ./fillit (args) [mapfile]\n");
 		exit(0);
 	}
 	else if (err == 0)
