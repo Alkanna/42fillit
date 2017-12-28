@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/28 06:37:27 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/28 14:59:20 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,13 +30,12 @@ FLAGS = -Wall -Werror -Wextra
 SRC_NAME = main.c	put.c	get.c	solve.c	tris.c	check_input.c color.c random.c ft_randomtab.c ft_gencolorcode.c ft_checkargs.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
-SRC_PATH = ./srcs/
-OBJ_PATH = ./obj/
-INC_PATH = ./includes/
-LFT_PATH = ./includes/libft/
+SRC_PATH = ./src/
+INC_PATH = ./src/
+LFT_PATH = ./libft/
 
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
-OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
+OBJ = $(addprefix $(SRC_PATH),$(OBJ_NAME))
 INC = $(addprefix -I,$(INC_PATH))
 
 ## Compiles the libs and the project
@@ -50,14 +49,13 @@ $(NAME): $(OBJ)
 	@printf "%-60b%b" "$(OK_COLOR)\nCompilation successful." "$(NO_COLOR)\n\n"
 	@printf "%-60b%b" "$(WARN_COLOR)Usage: ./fillit (-c) [mapfile] (-c is what happens\nwhen you have too much time on your hands) - Have fun !" "$(NO_COLOR)\n";
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@mkdir -p $(OBJ_PATH)
+$(SRC_PATH)%.o: $(SRC_PATH)%.c
 	@gcc $(FLAGS) $(INC) -o $@ -c $<
 
 ## Cleans the previously generated object files
 clean:
 	@make -C $(LFT_PATH) clean
-	@rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ)
 	@printf "%-60b%b" "$(COM_COLOR)$(RUN_STRING)$(OBJ_COLOR) $(@F)" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n";
 
 ## Cleans the object files and the executable itself
