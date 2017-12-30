@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 01:36:38 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 12:11:56 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 13:48:58 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ unsigned int	ft_random(unsigned int startnumber, unsigned int endnumber)
 	return (lfsr);
 }
 
-void			ft_aleasortedcolor(t_res *res, int x, int y,unsigned int *rt)
+void			ft_aleasortedcolor(t_res *res, int x, int y, unsigned int *rt)
 {
 	int					sortedcolor;
 	char				*tr;

@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 18:31:32 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 11:40:20 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 13:48:17 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-int	*ft_randomtab(size_t size, int min, int max)
+int					*ft_randomtab(size_t size, int min, int max)
 {
-	int		*rtab;
-	size_t	i;
+	int				*rtab;
+	size_t			i;
 
 	if ((rtab = (int *)malloc(size * sizeof(int)) + 1) == NULL)
 		return (0);
@@ -33,14 +33,14 @@ int	*ft_randomtab(size_t size, int min, int max)
 	return (rtab);
 }
 
-unsigned int  *ft_readrandomtab(size_t size)
+unsigned int		*ft_readrandomtab(size_t size)
 {
-	int fd;
-	int ret;
-	char *buf;
-	unsigned int *test;
-	size_t i;
-	unsigned char tab[100];
+	int				fd;
+	int				ret;
+	char			*buf;
+	unsigned int	*test;
+	size_t			i;
+	unsigned char	tab[100];
 
 	if ((fd = open("/dev/random", O_RDONLY)) < 0)
 		return (NULL);
@@ -61,7 +61,7 @@ unsigned int  *ft_readrandomtab(size_t size)
 	return (test);
 }
 
-int            *ft_asciitoid(int n)
+int					*ft_asciitoid(int n)
 {
 	unsigned int	tmp;
 	unsigned int	length;
@@ -86,6 +86,5 @@ int            *ft_asciitoid(int n)
 		tmp %= length;
 		length /= 10;
 	}
-//	ft_putnbr(*ret);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/28 06:36:49 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 12:11:03 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 13:49:30 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ int			main(int ac, char **av)
 	arg = 1;
 	if (ac == 3 && ft_argparse(av))
 		arg = 2;
-//	if (ac == 3 && !ft_strncmp(av[1], "-c", 2))
-//		arg = 2;
 	else if (ac != 2)
 		ft_put_error(2);
 	fd = open(av[arg], O_RDONLY);
@@ -78,15 +76,6 @@ int			main(int ac, char **av)
 	while (!ft_solve(res, 0))
 		res->size++;
 	ft_show_res(res, arg, av);
-//	unsigned int *test;
-//	int i = 0;
-//	test = ft_readrandomtab(100);
-//	while (i < 26)
-//	{
-//		ft_putnbr(test[i]);
-//		ft_putstr("\n");
-//		i++;
-//	}
 	free(res);
 	close(fd);
 	exit(0);

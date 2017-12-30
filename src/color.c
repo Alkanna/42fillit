@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 12:47:23 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 13:49:59 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,17 +84,15 @@ void	ft_color_map1(t_res *res, int x, int y)
 
 void	ft_frame_horizontal(t_res *res, int c, char **av)
 {
-	int		i;
-	int		test;
+	int				i;
+	int				test;
 
 	test = ft_argparse(av);
-//	if (ft_argparse(av) == 3)
-//		return ;
 	if (c)
 	{
 		i = 0;
 		ft_putstr("╔");
-		while (i++ < ((test == 3) ? (res->size * 2) : (res -> size)))
+		while (i++ < ((test == 3) ? (res->size * 2) : (res->size)))
 			ft_putstr("═");
 		ft_putstr("╗\n");
 	}
@@ -102,7 +100,7 @@ void	ft_frame_horizontal(t_res *res, int c, char **av)
 	{
 		i = 0;
 		ft_putstr("╚");
-		while (i++ < ((test == 3) ? (res->size * 2) : (res -> size)))
+		while (i++ < ((test == 3) ? (res->size * 2) : (res->size)))
 			ft_putstr("═");
 		ft_putstr("╝\n");
 	}
@@ -115,9 +113,9 @@ void	ft_frame_horizontal(t_res *res, int c, char **av)
 
 void	ft_color_map(t_res *res, char **av)
 {
-	int		y;
-	int		x;
-	unsigned int  *rt;
+	int				y;
+	int				x;
+	unsigned int	*rt;
 
 	rt = ft_readrandomtab(30);
 	y = 0;
@@ -125,7 +123,6 @@ void	ft_color_map(t_res *res, char **av)
 	while (y < res->size)
 	{
 		x = 0;
-//		if (ft_argparse(av) != 3)
 		ft_putstr("║");
 		while (x < res->size)
 		{
@@ -133,10 +130,9 @@ void	ft_color_map(t_res *res, char **av)
 			x++;
 		}
 		y++;
-//		if (ft_argparse(av) != 3)
 		ft_putstr("║");
 		ft_putchar('\n');
 	}
 	ft_frame_horizontal(res, 0, av);
-//	free(rt);
+	free(rt);
 }

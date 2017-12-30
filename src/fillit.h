@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/30 11:48:20 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 13:46:56 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,15 @@ int						*ft_randomtab(size_t size, int min, int max);
 char					*ft_gencolorcode(unsigned int colorcode, char *string);
 void					ft_aleacolor(t_res *res, int x, int y);
 int						ft_checkargs(int argc, char *argv, char *arg);
-void					ft_aleasortedcolor(t_res *res, int x, int y,unsigned int *rt);
+void					ft_aleasortedcolor(t_res *res, int x, int y
+							, unsigned int *rt);
 int						*ft_genpremadecolortab(void);
 void					ft_color_map1(t_res *res, int x, int y);
 void					ft_color_map2(t_res *res, int x, int y);
 void					ft_color_map3(t_res *res, int x, int y);
 int						ft_argparse(char **av);
-void					ft_argmode(int mode, t_res *res, int x, int y,unsigned int *rt);
+void					ft_argmode(int mode, t_res *res, int x, int y
+							, unsigned int *rt);
 void					ft_show_res(t_res *res, int arg, char **av);
 unsigned int			*ft_readrandomtab(size_t size);
 int						*ft_asciitoid(int n);
