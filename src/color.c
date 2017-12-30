@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 17:38:21 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 17:46:15 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,6 @@ void	ft_frame_horizontal(t_res *res, int c, char **av)
 		ft_putstr("╝\n");
 	}
 }
-
-/*
-** ft_aleacolor(res, x, y)
-** ft_color_map1(res, x, y)
-*/
 
 void	ft_color_map(t_res *res, char **av)
 {
