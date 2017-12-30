@@ -6,13 +6,13 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 18:48:44 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/28 14:37:53 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 11:49:27 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_gencolorcode(int colorcode, char *string)
+char	*ft_gencolorcode(unsigned int colorcode, char *string)
 {
 	char	*c;
 	char	*ret;

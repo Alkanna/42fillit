@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/29 22:26:16 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 11:39:32 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 11:58:43 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,21 @@
 
 int		ft_argparse(char **av)
 {
-	if (!ft_strncmp(av[1], "-cr", 3))
+	if (!ft_strncmp(av[1], "-cr\0", 4))
 		return (2);
-	else if (!ft_strncmp(av[1], "-cm", 3))
+	else if (!ft_strncmp(av[1], "-cm\0", 4))
 		return (3);
-	else if (!ft_strncmp(av[1], "-cfr", 4))
+	else if (!ft_strncmp(av[1], "-cfr\0", 5))
 		return (4);
-	else if (!ft_strncmp(av[1], "-c", 2))
+	else if (!ft_strncmp(av[1], "-c\0", 3))
 		return (1);
+	else if (!ft_strncmp(av[1], "-", 1))
+	{
+		ft_putstr("Available args :\n");
+		ft_putstr("-c : Sorted Random Color Mode\n");
+		ft_putstr("-cm : Macro Color Mode\n");
+		ft_putstr("-cfr : Full Random Color Mode\n");
+	}
 	return (0);
 }
 

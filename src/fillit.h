@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/30 11:41:41 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 11:48:20 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void					ft_color_map(t_res *res, char **av);
 unsigned int			ft_random(unsigned int startnumber, unsigned
 							int endnumber);
 int						*ft_randomtab(size_t size, int min, int max);
-char					*ft_gencolorcode(int colorcode, char *string);
+char					*ft_gencolorcode(unsigned int colorcode, char *string);
 void					ft_aleacolor(t_res *res, int x, int y);
 int						ft_checkargs(int argc, char *argv, char *arg);
 void					ft_aleasortedcolor(t_res *res, int x, int y,unsigned int *rt);
