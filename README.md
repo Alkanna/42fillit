@@ -15,7 +15,9 @@ make
 
 You can also run ```make help``` to have some insight on what the Makefile can do for you.
 
-##
+## Usage
+
+Simply run ```./fillit (arg) [mapfile]``` to use the program, however note than only one argument at a time is supported.
 
 Available arguments are :
 
