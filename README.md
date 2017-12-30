@@ -7,7 +7,7 @@ This version of the project features some bonuses, mainly color arguments.
 
 ## Getting Started
 
-Compilation is pretty straight forward :
+Compilation is pretty straightforward :
 
 ```
 make
