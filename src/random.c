@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 01:36:38 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 13:48:58 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 15:08:30 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,12 @@ void			ft_aleasortedcolor(t_res *res, int x, int y, unsigned int *rt)
 	int					sortedcolor;
 	char				*tr;
 
+	tr = NULL;
 	sortedcolor = res->map[y][x] - 64;
-	tr = ft_gencolorcode(rt[sortedcolor], &res->map[y][x]);
+	if (res->pretty == 1)
+		tr = ft_genprettycolorcode(rt[sortedcolor], &res->map[y][x]);
+	else
+		tr = ft_gencolorcode(rt[sortedcolor], &res->map[y][x]);
 	ft_putstr(tr);
 	free(tr);
 }

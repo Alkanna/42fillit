@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/30 13:46:56 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 15:04:15 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct			s_res
 	char				y;
 	int					t_nb;
 	struct s_block		**tab;
+	int					pretty;
 }						t_res;
 
 int						ft_check_input(char *s);
@@ -67,6 +68,8 @@ void					ft_argmode(int mode, t_res *res, int x, int y
 void					ft_show_res(t_res *res, int arg, char **av);
 unsigned int			*ft_readrandomtab(size_t size);
 int						*ft_asciitoid(int n);
+char					*ft_genprettycolorcode(unsigned int colorcode
+							, char *string);
 
 # define BUF_SIZE 4096
 

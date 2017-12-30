@@ -6,11 +6,12 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/29 22:26:16 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 13:46:20 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 15:21:31 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 /*
 ** -c : pre-colored mode --now packed
@@ -23,6 +24,8 @@ int		ft_argparse(char **av)
 {
 	if (!ft_strncmp(av[1], "-cr\0", 4))
 		return (2);
+	else if (!ft_strncmp(av[1], "-cmr\0", 5))
+		return (5);
 	else if (!ft_strncmp(av[1], "-cm\0", 4))
 		return (3);
 	else if (!ft_strncmp(av[1], "-cfr\0", 5))
@@ -35,12 +38,14 @@ int		ft_argparse(char **av)
 		ft_putstr("-c : Sorted Random Color Mode\n");
 		ft_putstr("-cm : Pretty Macro Color Mode\n");
 		ft_putstr("-cfr : Full Random Color Mode\n");
+		ft_putstr("-cmr : Rancom Pretty Color Mode\n");
 	}
 	return (0);
 }
 
 void	ft_argmode(int mode, t_res *res, int x, int y, unsigned int *rt)
 {
+	res->pretty = 0;
 	if (mode == 3)
 		ft_color_map1(res, x, y);
 	else if (mode == 2)
@@ -49,4 +54,10 @@ void	ft_argmode(int mode, t_res *res, int x, int y, unsigned int *rt)
 		ft_aleacolor(res, x, y);
 	else if (mode == 1)
 		ft_aleasortedcolor(res, x, y, rt);
+	else if (mode == 5)
+	{
+		res->pretty = 1;
+		ft_aleasortedcolor(res, x, y, rt);
+	}
+//	ft_putstr("\u25A0");
 }

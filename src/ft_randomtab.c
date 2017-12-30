@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 18:31:32 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 13:48:17 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 14:28:07 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ unsigned int		*ft_readrandomtab(size_t size)
 		test[i] = (unsigned char)buf[i];
 		i++;
 	}
+	free(buf);
 	return (test);
 }
 
