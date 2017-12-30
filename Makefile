@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/30 12:52:44 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/30 17:07:31 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ fclean: clean
 	@rm -rf $(NAME)
 	@printf "%-60b%b" "$(COM_COLOR)$(RUN_STRING)$(OBJ_COLOR) $(@F)" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n";
 
-## Runs a full clean and compiles the whole project and its libs
+## Cleans everything first, then compiles the whole project
 re: fclean all
 
 ## COLORS
