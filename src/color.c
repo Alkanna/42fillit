@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 12:35:24 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 12:47:23 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,16 @@ void	ft_color_map1(t_res *res, int x, int y)
 void	ft_frame_horizontal(t_res *res, int c, char **av)
 {
 	int		i;
+	int		test;
 
-	if (ft_argparse(av) == 3)
-		return ;
+	test = ft_argparse(av);
+//	if (ft_argparse(av) == 3)
+//		return ;
 	if (c)
 	{
 		i = 0;
 		ft_putstr("╔");
-		while (i++ < res->size)
+		while (i++ < ((test == 3) ? (res->size * 2) : (res -> size)))
 			ft_putstr("═");
 		ft_putstr("╗\n");
 	}
@@ -100,7 +102,7 @@ void	ft_frame_horizontal(t_res *res, int c, char **av)
 	{
 		i = 0;
 		ft_putstr("╚");
-		while (i++ < res->size)
+		while (i++ < ((test == 3) ? (res->size * 2) : (res -> size)))
 			ft_putstr("═");
 		ft_putstr("╝\n");
 	}
@@ -123,16 +125,16 @@ void	ft_color_map(t_res *res, char **av)
 	while (y < res->size)
 	{
 		x = 0;
-		if (ft_argparse(av) != 3)
-			ft_putstr("║");
+//		if (ft_argparse(av) != 3)
+		ft_putstr("║");
 		while (x < res->size)
 		{
 			ft_argmode(ft_argparse(av), res, x, y, rt);
 			x++;
 		}
 		y++;
-		if (ft_argparse(av) != 3)
-			ft_putstr("║");
+//		if (ft_argparse(av) != 3)
+		ft_putstr("║");
 		ft_putchar('\n');
 	}
 	ft_frame_horizontal(res, 0, av);
