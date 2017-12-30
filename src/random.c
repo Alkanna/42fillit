@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 01:36:38 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 11:48:56 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 12:11:56 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@
 ** only sometimes..
 ** My "seed" here is the memory adress pointed by p, and this is the main
 ** reason it does not always work perfectly. Room for improvement !
+** UPDATE : This is no longer in use, too unreliable for now.
 */
 
 unsigned int	ft_random(unsigned int startnumber, unsigned int endnumber)

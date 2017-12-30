@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/29 22:26:16 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 11:58:43 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 12:27:09 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_argparse(char **av)
 	{
 		ft_putstr("Available args :\n");
 		ft_putstr("-c : Sorted Random Color Mode\n");
-		ft_putstr("-cm : Macro Color Mode\n");
+		ft_putstr("-cm : Pretty Macro Color Mode\n");
 		ft_putstr("-cfr : Full Random Color Mode\n");
 	}
 	return (0);
