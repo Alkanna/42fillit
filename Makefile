@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/30 02:50:39 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/30 12:35:58 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,7 +103,7 @@ define TAB
 endef
 
 Authors=klouer and dshults
-Version=1.03c
+Version=1.2c
 Function=Tries to fit tetriminos into the smallest possible map
 RunHelp = ------------------------- Run 'make help' to see usage ---------------------------
 Git =https://github.com/Alkanna/42fillit

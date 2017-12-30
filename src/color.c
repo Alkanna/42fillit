@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 12:26:43 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 12:35:24 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_color_map1(t_res *res, int x, int y)
 	if (!ft_strncmp(&res->map[y][x], "A", 1))
 		ft_putstr("\x1b[38;5;22m■ \x1b[0m");
 	if (!ft_strncmp(&res->map[y][x], ".", 1))
-		ft_putstr("\x1b[38;5;22m. \x1b[0m");
+		ft_putstr("\x1b[38;5;22m· \x1b[0m");
 	if (!ft_strncmp(&res->map[y][x], "B", 1))
 		ft_putstr("\x1b[38;5;196m■ \x1b[0m");
 	if (!ft_strncmp(&res->map[y][x], "C", 1))
