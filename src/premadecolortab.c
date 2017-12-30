@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomtab.c                                        :+:      :+:    :+:   */
+/*   premadecolortab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/27 18:31:32 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/29 22:10:02 by klouer           ###   ########.fr       */
+/*   Created: 2017/12/29 17:17:47 by klouer            #+#    #+#             */
+/*   Updated: 2017/12/29 17:28:27 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	*ft_randomtab(size_t size, int min, int max)
+int	*ft_genpremadecolortab(void)
 {
-	int		*rtab;
-	size_t	i;
+	int	*tab;
+	int	i;
+	int color;
 
-	if ((rtab = (int *)malloc(size * sizeof(int)) + 1) == NULL)
+	if ((tab = malloc(sizeof(int) * 27)) == NULL)
 		return (0);
 	i = 0;
-	while (i < size)
+	color = 25;
+	while (i < 27)
 	{
-		rtab[i] = ft_random(min, max);
+		tab[i] = color;
 		i++;
+		color += 7;
 	}
-	rtab[i] = '\0';
-	return (rtab);
+	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/28 15:01:06 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 02:49:05 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,13 +109,15 @@ void	ft_frame_horizontal(t_res *res, int c)
 ** ft_color_map1(res, x, y)
 */
 
-void	ft_color_map(t_res *res)
+void	ft_color_map(t_res *res, char **av)
 {
 	int		y;
 	int		x;
 	int		*rt;
 
+	rt = 0;
 	rt = ft_randomtab(27, 15, 240);
+//	rt = ft_genpremadecolortab();
 	y = 0;
 	ft_frame_horizontal(res, 1);
 	while (y < res->size)
@@ -124,7 +126,8 @@ void	ft_color_map(t_res *res)
 		ft_putstr("║");
 		while (x < res->size)
 		{
-			ft_aleasortedcolor(res, x, y, rt);
+//			ft_aleasortedcolor(res, x, y, rt);
+			ft_argmode(ft_argparse(av), res, x, y, rt);
 			x++;
 		}
 		y++;
@@ -132,4 +135,5 @@ void	ft_color_map(t_res *res)
 		ft_putchar('\n');
 	}
 	ft_frame_horizontal(res, 0);
+//	free(rt);
 }

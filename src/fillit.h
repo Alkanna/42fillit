@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/28 14:37:31 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 02:47:39 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ int						ft_solve(t_res *map, int tetri);
 int						ft_is_putable(t_res *map, t_block *t);
 void					ft_put_tetris(t_res *res, t_block *t);
 
-void					ft_color_map(t_res *res);
-void					ft_color_map_2(t_res *res, int x, int y);
-void					ft_color_map_3(t_res *res, int x, int y);
+void					ft_color_map(t_res *res, char **av);
 unsigned int			ft_random(unsigned int startnumber, unsigned
 							int endnumber);
 int						*ft_randomtab(size_t size, int min, int max);
@@ -58,6 +56,13 @@ char					*ft_gencolorcode(int colorcode, char *string);
 void					ft_aleacolor(t_res *res, int x, int y);
 int						ft_checkargs(int argc, char *argv, char *arg);
 void					ft_aleasortedcolor(t_res *res, int x, int y, int *rt);
+int						*ft_genpremadecolortab(void);
+void					ft_color_map1(t_res *res, int x, int y);
+void					ft_color_map2(t_res *res, int x, int y);
+void					ft_color_map3(t_res *res, int x, int y);
+int						ft_argparse(char **av);
+void					ft_argmode(int mode, t_res *res, int x, int y, int *rt);
+void					ft_show_res(t_res *res, int arg, char **av);
 
 # define BUF_SIZE 4096
 

@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/28 14:59:20 by klouer           ###   ########.fr        #
+#    Updated: 2017/12/30 02:50:39 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ NAME = fillit
 
 FLAGS = -Wall -Werror -Wextra
 
-SRC_NAME = main.c	put.c	get.c	solve.c	tris.c	check_input.c color.c random.c ft_randomtab.c ft_gencolorcode.c ft_checkargs.c
+SRC_NAME = main.c	put.c	get.c	solve.c	tris.c	check_input.c color.c random.c ft_randomtab.c ft_gencolorcode.c ft_checkargs.c premadecolortab.c argparser.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC_PATH = ./src/
@@ -103,13 +103,13 @@ define TAB
 endef
 
 Authors=klouer and dshults
-Version=1.01
+Version=1.03c
 Function=Tries to fit tetriminos into the smallest possible map
 RunHelp = ------------------------- Run 'make help' to see usage ---------------------------
 Git =https://github.com/Alkanna/42fillit
 $(info ╔════════════════════════════════════════════════════════════════════════════════╗)
 $(info ------------------------- ${YELLOW}Authors${RESET} : ${GREEN}$(Authors)${RESET} ---------------------------)
-$(info ------------------------------- ${YELLOW}Version${RESET} : ${GREEN}$(Version)${RESET} -----------------------------------)
+$(info ------------------------------- ${YELLOW}Version${RESET} : ${GREEN}$(Version)${RESET} ----------------------------------)
 $(info ----------------- ${YELLOW}GitHub${RESET} : ${GREEN}$(Git)${RESET} -------------------)
 $(info ------- ${YELLOW}Function${RESET} : ${GREEN}$(Function)${RESET} --------$(NEWLINE)$(RunHelp))
 $(info ╚════════════════════════════════════════════════════════════════════════════════╝$(NEWLINE))
