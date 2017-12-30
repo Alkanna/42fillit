@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/30 02:47:39 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 06:40:07 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void					ft_color_map3(t_res *res, int x, int y);
 int						ft_argparse(char **av);
 void					ft_argmode(int mode, t_res *res, int x, int y, int *rt);
 void					ft_show_res(t_res *res, int arg, char **av);
+char					*ft_readrandomtab(size_t size);
 
 # define BUF_SIZE 4096
 

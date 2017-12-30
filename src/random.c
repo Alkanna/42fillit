@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 01:36:38 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/28 14:38:45 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 03:26:11 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@
 
 unsigned int	ft_random(unsigned int startnumber, unsigned int endnumber)
 {
-	unsigned int		bit;
-	unsigned int		t;
-	static unsigned int	lfsr = 0xACE1u;
+	uint16_t			bit;
+	uint16_t			t;
+	static unsigned int	lfsr = 0x00ff;
 	int					*p;
 
 	p = NULL;
