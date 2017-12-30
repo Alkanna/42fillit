@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/28 06:36:49 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 06:44:08 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 11:39:18 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,13 @@ int			main(int ac, char **av)
 	while (!ft_solve(res, 0))
 		res->size++;
 	ft_show_res(res, arg, av);
-	char *test;
+//	unsigned int *test;
 //	int i = 0;
-	test = ft_readrandomtab(100);
+//	test = ft_readrandomtab(100);
 //	while (i < 26)
 //	{
 //		ft_putnbr(test[i]);
+//		ft_putstr("\n");
 //		i++;
 //	}
 	free(res);

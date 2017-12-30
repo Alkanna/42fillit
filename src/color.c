@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 03:15:11 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 11:39:49 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,10 @@ void	ft_color_map(t_res *res, char **av)
 {
 	int		y;
 	int		x;
-	int		*rt;
+	unsigned int  *rt;
 
-	rt = 0;
-	rt = ft_randomtab(27, 15, 240);
+	rt = ft_readrandomtab(30);
+//	rt = ft_randomtab(27, 15, 240);
 //	rt = ft_genpremadecolortab();
 	y = 0;
 	ft_frame_horizontal(res, 1);

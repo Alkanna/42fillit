@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 18:31:32 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 06:56:50 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 11:40:20 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ int	*ft_randomtab(size_t size, int min, int max)
 	return (rtab);
 }
 
-char  *ft_readrandomtab(size_t size)
+unsigned int  *ft_readrandomtab(size_t size)
 {
 	int fd;
 	int ret;
 	char *buf;
+	unsigned int *test;
 	size_t i;
 	unsigned char tab[100];
 
@@ -48,12 +49,43 @@ char  *ft_readrandomtab(size_t size)
 	i = 0;
 	if ((buf = malloc(sizeof(char) * size + 1)) == NULL)
 		return (NULL);
+	if ((test = malloc(sizeof(unsigned int) * size + 1)) == NULL)
+		return (NULL);
 	while (i < size)
 	{
-//		printf("%d\n", tab[i]);
-		ft_putnbr(tab[i]);
-		ft_putstr("\n");
+		buf[i] = (0xffff & tab[i]);
+		buf[i] = (unsigned char)buf[i];
+		test[i] = (unsigned char)buf[i];
 		i++;
 	}
-	return (buf);
+	return (test);
+}
+
+int            *ft_asciitoid(int n)
+{
+	unsigned int	tmp;
+	unsigned int	length;
+	int				*ret;
+
+	ret = NULL;
+	length = 1;
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	tmp = n;
+	while ((tmp /= 10) > 0)
+	{
+		length *= 10;
+	}
+	tmp = n;
+	while (length)
+	{
+		*ret = (char)(tmp / length) + 48;
+		tmp %= length;
+		length /= 10;
+	}
+//	ft_putnbr(*ret);
+	return (ret);
 }

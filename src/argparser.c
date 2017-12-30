@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/29 22:26:16 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 02:50:25 by klouer           ###   ########.fr       */
+/*   Updated: 2017/12/30 11:39:32 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_argparse(char **av)
 	return (0);
 }
 
-void	ft_argmode(int mode,t_res *res, int x, int y, int *rt)
+void	ft_argmode(int mode,t_res *res, int x, int y, unsigned int *rt)
 {
 //	int *rt;
 	static int ran = 0;
