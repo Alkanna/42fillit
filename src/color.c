@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 17:46:15 by klouer           ###   ########.fr       */
+/*   Updated: 2018/01/04 14:23:09 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	ft_color_map(t_res *res, char **av)
 	int				x;
 	unsigned int	*rt;
 
-	rt = ft_readrandomtab(30);
+	rt = ft_readrandomtab(30, 0);
 	y = 0;
 	ft_frame_horizontal(res, 1, av);
 	while (y < res->size)
@@ -123,7 +123,8 @@ void	ft_color_map(t_res *res, char **av)
 		ft_putstr("║");
 		while (x < res->size)
 		{
-			ft_argmode(ft_argparse(av), res, x, y, rt);
+			res->mode = ft_argparse(av);
+			ft_argmode(res, x, y, rt);
 			x++;
 		}
 		y++;

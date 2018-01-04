@@ -6,7 +6,7 @@
 /*   By: klouer <klouer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 18:31:32 by klouer            #+#    #+#             */
-/*   Updated: 2017/12/30 17:38:03 by klouer           ###   ########.fr       */
+/*   Updated: 2018/01/04 14:22:43 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ int					*ft_randomtab(size_t size, int min, int max)
 	return (rtab);
 }
 
-unsigned int		*ft_readrandomtab(size_t size)
+unsigned int		*ft_readrandomtab(size_t size, int fd)
 {
-	int				fd;
 	int				ret;
 	char			*buf;
 	unsigned int	*test;

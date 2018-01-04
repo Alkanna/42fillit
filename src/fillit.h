@@ -6,7 +6,7 @@
 /*   By: dshults <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 14:44:57 by dshults           #+#    #+#             */
-/*   Updated: 2017/12/30 15:04:15 by klouer           ###   ########.fr       */
+/*   Updated: 2018/01/04 14:22:38 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct			s_res
 	int					t_nb;
 	struct s_block		**tab;
 	int					pretty;
+	int					mode;
 }						t_res;
 
 int						ft_check_input(char *s);
@@ -63,10 +64,10 @@ void					ft_color_map1(t_res *res, int x, int y);
 void					ft_color_map2(t_res *res, int x, int y);
 void					ft_color_map3(t_res *res, int x, int y);
 int						ft_argparse(char **av);
-void					ft_argmode(int mode, t_res *res, int x, int y
+void					ft_argmode(t_res *res, int x, int y
 							, unsigned int *rt);
 void					ft_show_res(t_res *res, int arg, char **av);
-unsigned int			*ft_readrandomtab(size_t size);
+unsigned int			*ft_readrandomtab(size_t size, int fd);
 int						*ft_asciitoid(int n);
 char					*ft_genprettycolorcode(unsigned int colorcode
 							, char *string);
