@@ -6,7 +6,7 @@
 #    By: dshults <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/14 18:34:55 by dshults           #+#    #+#              #
-#    Updated: 2017/12/30 17:07:31 by klouer           ###   ########.fr        #
+#    Updated: 2018/01/04 14:30:38 by klouer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ $(NAME): $(OBJ)
 	@gcc -o $(NAME) $(OBJ) -L $(LFT_PATH) -lft
 	@printf "%-60b%b" "$(COM_COLOR)$(COM_STRING)$(OBJ_COLOR) $(@F)" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n";
 	@printf "%-60b%b" "$(OK_COLOR)\nCompilation successful." "$(NO_COLOR)\n\n"
-	@printf "%-60b%b" "$(WARN_COLOR)Usage: ./fillit (-c) [mapfile] (-c is what happens\nwhen you have too much time on your hands) - Have fun !" "$(NO_COLOR)\n";
+	@printf "%-60b%b" "$(WARN_COLOR)Usage: ./fillit (-cr) [mapfile] (-c is what happens\nwhen you have too much time on your hands... And there's even more.) - Have fun !" "$(NO_COLOR)\n";
 
 $(SRC_PATH)%.o: $(SRC_PATH)%.c
 	@gcc $(FLAGS) $(INC) -o $@ -c $<
