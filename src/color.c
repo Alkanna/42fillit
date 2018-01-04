@@ -6,7 +6,7 @@
 /*   By: klouer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 06:00:39 by klouer            #+#    #+#             */
-/*   Updated: 2018/01/04 14:23:09 by klouer           ###   ########.fr       */
+/*   Updated: 2018/01/04 14:26:17 by klouer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ void	ft_frame_horizontal(t_res *res, int c, char **av)
 	{
 		i = 0;
 		ft_putstr("╔");
-		while (i++ < ((test == 3 || res->pretty == 1) ? (res->size * 2) : (res->size)))
+		while (i++ < ((test == 3 || res->pretty == 1) ? (
+				res->size * 2) : (res->size)))
 			ft_putstr("═");
 		ft_putstr("╗\n");
 	}
@@ -102,7 +103,8 @@ void	ft_frame_horizontal(t_res *res, int c, char **av)
 	{
 		i = 0;
 		ft_putstr("╚");
-		while (i++ < ((test == 3 || res->pretty == 1) ? (res->size * 2) : (res->size)))
+		while (i++ < ((test == 3 || res->pretty == 1) ? (
+				res->size * 2) : (res->size)))
 			ft_putstr("═");
 		ft_putstr("╝\n");
 	}
